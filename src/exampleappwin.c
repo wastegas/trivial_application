@@ -16,7 +16,7 @@ example_app_window_init(ExampleAppWindow *app)
 }
 
 static void
-example_app_window_class_init(ExampleWindowClass *class)
+example_app_window_class_init(ExampleAppWindowClass *class)
 {
 }
 

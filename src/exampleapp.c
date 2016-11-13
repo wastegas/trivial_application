@@ -49,7 +49,7 @@ example_app_open(GApplication *app,
 static void
 example_app_class_init(ExampleAppClass *class)
 {
-  G_APPLICATION_CLASS(class)->activiate = example_app_activate;
+  G_APPLICATION_CLASS(class)->activate = example_app_activate;
   G_APPLICATION_CLASS(class)->open = example_app_open;
 }
 
