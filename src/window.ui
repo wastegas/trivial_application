@@ -7,7 +7,7 @@
         <child>
             <object class="GtkBox" id="content_box">
                 <property name="visible">True</property>
-                <property name="orientation">Vertical</property>
+                <property name="orientation">vertical</property>
                 <child>
                     <object class="GtkHeaderBar" id="header">
                         <property name="visible">True</property>
