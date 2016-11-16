@@ -18,6 +18,8 @@ example_app_window_init(ExampleAppWindow *app)
 static void
 example_app_window_class_init(ExampleAppWindowClass *class)
 {
+  gtk_widget_class_set_template_from_resource(GTK_WIDGET_CLASS (class),
+                                              "window.ui");
 }
 
 ExampleAppWindow *
