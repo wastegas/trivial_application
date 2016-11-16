@@ -1,0 +1,6 @@
+<?xml verion="1.0" encoding="UTF-8"?>
+<gresources>
+    <gresource prefix=".">
+        <file preprocess="xml-stripblanks">window.ui</file>
+    </gresource>
+</gresources>
