@@ -7,6 +7,11 @@ Requirements
 ------------
 Download [GTK+](https://www.gtk.org/download/index.php) for your OS.
 
+Generate resource file
+----------------------
+In the src directory:
+    glib-compile-resources exampleapp.gresource.xml --target=resources.c --generate-source
+
 Installing
 ----------
 You can use the usual
