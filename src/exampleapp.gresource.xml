@@ -2,5 +2,6 @@
 <gresources>
     <gresource prefix="/Users/Ronnie/Documents/gtk/trivial_application/src">
         <file preprocess="xml-stripblanks">window.ui</file>
+        <file preprocess="xml-stripblanks">menu.ui</file>
     </gresource>
 </gresources>
