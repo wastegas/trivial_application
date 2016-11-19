@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface>
+    <menu id="appmenu">
+        <section>
+            <item>
+                <attribute name="label" translatable="yes">_Preferences</atribute>
+                <attribute name="action">app.preferences</attribute>
+            </item>
+        </section>
+        <section>
+            <item>
+                <attribute name="label" translatable="yes">_Quit</attribute><attribute name="action">app.quit</attribute>
+            </item>
+        </section>
+    </menu>
+</interface>
