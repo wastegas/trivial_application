@@ -18,12 +18,12 @@ struct _ExampleAppPrefsPrivate
   GtkWidget *transition;
 };
 
-G_DEFINE_TYPE_PRIVATE(ExampleAppPrefs, example_app_prefs, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE(ExampleAppPrefs, example_app_prefs, GTK_TYPE_DIALOG)
 
 static void
 example_app_prefs_init(ExampleAppPrefs *prefs)
 {
-  ExampleAppPrefs *priv;
+  ExampleAppPrefsPrivate *priv;
 
   priv = example_app_prefs_get_instance_private(prefs);
   gtk_widget_init_template(GTK_WIDGET(prefs));
@@ -34,7 +34,7 @@ example_app_prefs_init(ExampleAppPrefs *prefs)
                   G_SETTINGS_BIND_DEFAULT);
 
   g_settings_bind(priv->setting, "transition",
-                  priv->transition, "transition",
+                  priv->transition, "active-id",
                   G_SETTINGS_BIND_DEFAULT);
 }
 
@@ -61,7 +61,7 @@ example_app_prefs_class_init(ExampleAppPrefsClass *class)
 }
 
 ExampleAppPrefs *
-example_app_prefs_new(ExampleAppWin *win)
+example_app_prefs_new(ExampleAppWindow *win)
 {
-  return g_object_new(EXAMPLE_APP_PREFS_TYPE, "transition-for", win, "use-header-bar", TRUE, NULL);
+  return g_object_new(EXAMPLE_APP_PREFS_TYPE, "transient-for", win, "use-header-bar", TRUE, NULL);
 }
