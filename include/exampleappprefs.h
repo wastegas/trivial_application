@@ -1,7 +1,7 @@
 #ifndef __EXAMPLEPREFS_H
 #define __EXAMPLEPREFS_H
 
-#include <gtk.gtk.h>
+#include <gtk/gtk.h>
 #include "exampleappwin.h"
 
 #define EXAMPLE_APP_PREFS_TYPE (example_app_pref_get_type())
