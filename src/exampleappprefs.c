@@ -33,7 +33,7 @@ example_app_prefs_init(ExampleAppPrefs *prefs)
                   priv->font, "font",
                   G_SETTINGS_BIND_DEFAULT);
 
-  g_settings_bind(priv->setting, "transition",
+  g_settings_bind(priv->settings, "transition",
                   priv->transition, "active-id",
                   G_SETTINGS_BIND_DEFAULT);
 }

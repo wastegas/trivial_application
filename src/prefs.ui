@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-    <template class="ExampleAppsPrefs" parent="GtkDialog">
+    <template class="ExampleAppPrefs" parent="GtkDialog">
         <property name="title" translatable="yes">Preferences</property>
         <property name="resizable">False</property>
         <property name="modal">True</property>
@@ -16,7 +16,7 @@
                             <object class="GtkLabel" id="fontlabel">
                                 <property name="visible">True</property>
                                 <property name="label">_Font</property>
-                                <property name="mnumonic-widget">font</property>
+                                <property name="mnemonic-widget">font</property>
                                 <property name="xalign">1</property>
                             </object>
                             <packing>
@@ -38,7 +38,7 @@
                                 <property name="visible">True</property>
                                 <property name="label">_Transition</property>
                                 <property name="use-underline">True</property>
-                                <property name="mnumonic-widget">transition</property>
+                                <property name="mnemonic-widget">transition</property>
                                 <property name="xalign">1</property>
                             </object>
                             <packing>
