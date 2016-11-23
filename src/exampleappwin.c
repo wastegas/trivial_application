@@ -24,7 +24,7 @@ G_DEFINE_TYPE_WITH_PRIVATE(ExampleAppWindow, example_app_window, GTK_TYPE_APPLIC
 static void
 example_app_window_init(ExampleAppWindow *win)
 {
-  ExampleWindowPrivate *priv;
+  ExampleAppWindowPrivate *priv;
   priv = example_app_window_get_instance_private(win);
   gtk_widget_init_template(GTK_WIDGET(win));
 
@@ -33,16 +33,6 @@ example_app_window_init(ExampleAppWindow *win)
   g_settings_bind(priv->settings, "transition",
                   priv->stack, "transition-type",
                   G_SETTINGS_BIND_DEFAULT);
-}
-
-static void
-example_app_window_class_init(ExampleAppWindowClass *class)
-{
-  G_OBJECT_CLASS (class)->dispose = example_app_class_dispose;
-  gtk_widget_class_set_template_from_resource(GTK_WIDGET_CLASS (class),
-                                              "/Users/Ronnie/Documents/gtk/trivial_application/src/window.ui");
-  gtk_widget_class_bind_template_child_private(GTK_WIDGET_CLASS (class),
-                                         ExampleAppWindow, stack);
 }
 
 ExampleAppWindow *
@@ -65,7 +55,17 @@ example_app_window_dispose(GObject *object)
 
   g_clear_object(&priv->settings);
 
-  G_OBJECT_CLASS(example_app_window_class)->dispose (object);
+  G_OBJECT_CLASS(example_app_window_parent_class)->dispose (object);
+}
+
+static void
+example_app_window_class_init(ExampleAppWindowClass *class)
+{
+  G_OBJECT_CLASS (class)->dispose = example_app_window_dispose;
+  gtk_widget_class_set_template_from_resource(GTK_WIDGET_CLASS (class),
+                                              "/Users/Ronnie/Documents/gtk/trivial_application/src/window.ui");
+  gtk_widget_class_bind_template_child_private(GTK_WIDGET_CLASS (class),
+                                         ExampleAppWindow, stack);
 }
 
 void
@@ -78,6 +78,7 @@ example_app_window_open(ExampleAppWindow *win,
   gchar *contents;
   gsize length;
   GtkTextBuffer *buffer;
+  GtkTextTag *tag;
   GtkTextIter start_iter, end_iter;
 
   priv = example_app_window_get_instance_private(win);
